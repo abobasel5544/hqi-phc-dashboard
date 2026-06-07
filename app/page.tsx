@@ -85,7 +85,7 @@ function pct(n: number | null | undefined, d: number | null | undefined) {
   return (Number(n) / Number(d)) * 100;
 }
 
-function status(v: number | null, target = 80) {
+function status(v: number | null, target = 100) {
   if (v === null) return { label: "لم يكتمل", cls: "bg-slate-100 text-slate-600" };
   if (v >= target) return { label: "محقق", cls: "bg-emerald-100 text-emerald-700" };
   if (v >= target * 0.85) return { label: "قريب", cls: "bg-amber-100 text-amber-700" };
@@ -258,13 +258,13 @@ export default function Page() {
       const totalNumerator = rows.reduce((sum, r) => sum + Number(r.numerator || 0), 0);
       const totalDenominator = rows.reduce((sum, r) => sum + Number(r.denominator || 0), 0);
       const percentage = pct(totalNumerator, totalDenominator);
-      const st = status(percentage, ind.defaultTarget || 80);
+      const st = status(percentage, ind.defaultTarget || 100);
       const enteredCenters = new Set(rows.filter((r) => r.numerator !== null || r.denominator !== null).map((r) => r.center));
       const missingCenters = centers.filter((c) => !enteredCenters.has(c));
       return {
         code: ind.code,
         indicator: ind.name,
-        target: ind.defaultTarget || 80,
+        target: ind.defaultTarget || 100,
         totalNumerator,
         totalDenominator,
         percentage,
@@ -497,7 +497,7 @@ function EntryTable({ indicators, currentMap, updateLocal }: { indicators: Indic
         <tbody>{indicators.map((ind) => {
           const e = currentMap.get(ind.code);
           const v = pct(e?.numerator ?? null, e?.denominator ?? null);
-          const st = status(v, ind.defaultTarget || 80);
+          const st = status(v, ind.defaultTarget || 100);
           return (
             <tr key={ind.code} className="border-t align-top hover:bg-slate-50">
               <td className="p-3 text-center font-bold text-slate-900">{ind.code}</td>
@@ -513,7 +513,7 @@ function EntryTable({ indicators, currentMap, updateLocal }: { indicators: Indic
                   </div>
                 )}
               </td>
-              <td className="p-3 text-center font-semibold">{ind.defaultTarget || 80}%</td>
+              <td className="p-3 text-center font-semibold">{ind.defaultTarget || 100}%</td>
               <td className="p-3"><input type="number" value={e?.numerator ?? ""} onChange={(ev) => updateLocal(ind.code, "numerator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td>
               <td className="p-3"><input type="number" value={e?.denominator ?? ""} onChange={(ev) => updateLocal(ind.code, "denominator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td>
               <td className="p-3 text-center font-bold">{v === null ? "—" : v.toFixed(1) + "%"}</td>

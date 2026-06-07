@@ -6,7 +6,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.2.",
@@ -15,7 +15,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.1.",
@@ -24,7 +24,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.6.",
@@ -33,7 +33,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.5.",
@@ -42,7 +42,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.8.",
@@ -51,7 +51,7 @@
     "denominatorDescription": "Total count of eligible population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "4.3.4",
@@ -60,7 +60,7 @@
     "denominatorDescription": "Total count of eligible targeted population",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "2.3.1.",
@@ -69,7 +69,7 @@
     "denominatorDescription": "Total OPD patients",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "3.2.2.",
@@ -78,7 +78,7 @@
     "denominatorDescription": "The total number of HH opportunities observe",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "1.1.1.",
@@ -87,7 +87,7 @@
     "denominatorDescription": "Number of patients surveyed",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "1.2.2.",
@@ -96,7 +96,7 @@
     "denominatorDescription": "Total number of responses to the complaints’ resolution survey",
     "facilityType": "Hospital /PHC",
     "status": "inActive",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "1.2.1",
@@ -105,7 +105,7 @@
     "denominatorDescription": "Total number of complaints received",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   },
   {
     "code": "5.1.1",
@@ -114,6 +114,6 @@
     "denominatorDescription": "Total number of staff surveyed",
     "facilityType": "Hospital /PHC",
     "status": "Active",
-    "defaultTarget": 80
+    "defaultTarget": 100
   }
 ]
