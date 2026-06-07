@@ -376,7 +376,6 @@ export default function Page() {
             </div>
             <p className="text-sm text-slate-500">تجمع جدة الصحي الأول - مستشفى شرق جدة</p>
             <h1 className="mt-2 text-2xl font-bold text-slate-900">دخول مؤشرات الجودة HQI</h1>
-            <p className="mt-2 text-sm text-slate-500">كل مركز يدخل بحسابه الخاص، والإدارة تدخل بحساب admin لعرض التقرير المجمع.</p>
           </div>
           <label className="mb-3 block text-sm font-semibold text-slate-700">اسم المستخدم</label>
           <input value={loginUsername} onChange={(e) => setLoginUsername(e.target.value)} className="mb-4 w-full rounded-xl border p-3" placeholder="مثال: wahah" />
