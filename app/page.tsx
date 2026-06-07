@@ -24,6 +24,7 @@ type Indicator = {
   description?: string;
   denominatorDescription?: string;
   facilityType?: string;
+  status?: string;
   defaultTarget?: number;
 };
 
@@ -303,6 +304,8 @@ export default function Page() {
     const summarySheet = aggregateRows.map((r) => ({
       "كود المؤشر": r.code,
       "اسم المؤشر": r.indicator,
+      "وصف المؤشر": indicators.find((i) => i.code === r.code)?.description || "",
+      "المقام": indicators.find((i) => i.code === r.code)?.denominatorDescription || "",
       "مجموع البسط لجميع المراكز": r.totalNumerator,
       "مجموع المقام لجميع المراكز": r.totalDenominator,
       "النسبة النهائية": r.percentage === null ? "" : Number(r.percentage.toFixed(2)),
@@ -320,6 +323,8 @@ export default function Page() {
         "المركز": e.center,
         "كود المؤشر": e.indicator_code,
         "اسم المؤشر": ind?.name || "",
+        "وصف المؤشر": ind?.description || "",
+        "المقام المرجعي": ind?.denominatorDescription || "",
         "البسط": e.numerator ?? "",
         "المقام": e.denominator ?? "",
         "النسبة": v === null ? "" : Number(v.toFixed(2)),
@@ -475,13 +480,47 @@ export default function Page() {
 function EntryTable({ indicators, currentMap, updateLocal }: { indicators: Indicator[]; currentMap: Map<string, Entry>; updateLocal: (code: string, field: "numerator" | "denominator" | "notes", value: string) => void }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead className="bg-slate-100"><tr><th className="p-3 text-right">المؤشر</th><th className="p-3">المستهدف</th><th className="p-3">البسط</th><th className="p-3">المقام</th><th className="p-3">النسبة</th><th className="p-3">الحالة</th><th className="p-3">ملاحظة</th></tr></thead>
+      <table className="w-full min-w-[1250px] text-sm">
+        <thead className="bg-slate-100">
+          <tr>
+            <th className="p-3 text-center w-[110px]">كود المؤشر</th>
+            <th className="p-3 text-right w-[250px]">اسم المؤشر</th>
+            <th className="p-3 text-right min-w-[520px]">وصف المؤشر / المقام</th>
+            <th className="p-3 text-center w-[100px]">المستهدف</th>
+            <th className="p-3 text-center w-[130px]">البسط</th>
+            <th className="p-3 text-center w-[130px]">المقام</th>
+            <th className="p-3 text-center w-[95px]">النسبة</th>
+            <th className="p-3 text-center w-[105px]">الحالة</th>
+            <th className="p-3 text-center w-[190px]">ملاحظة</th>
+          </tr>
+        </thead>
         <tbody>{indicators.map((ind) => {
           const e = currentMap.get(ind.code);
           const v = pct(e?.numerator ?? null, e?.denominator ?? null);
           const st = status(v, ind.defaultTarget || 80);
-          return <tr key={ind.code} className="border-t hover:bg-slate-50"><td className="p-3 min-w-[280px]"><b>{ind.code} - {ind.name}</b><p className="text-xs text-slate-500 line-clamp-1">{ind.description}</p>{ind.denominatorDescription && <p className="mt-1 text-[11px] text-slate-400 line-clamp-1">المقام: {ind.denominatorDescription}</p>}</td><td className="p-3 text-center">{ind.defaultTarget || 80}%</td><td className="p-3"><input type="number" value={e?.numerator ?? ""} onChange={(ev) => updateLocal(ind.code, "numerator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td><td className="p-3"><input type="number" value={e?.denominator ?? ""} onChange={(ev) => updateLocal(ind.code, "denominator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td><td className="p-3 text-center font-bold">{v === null ? "—" : v.toFixed(1) + "%"}</td><td className="p-3 text-center"><span className={`rounded-full px-3 py-1 text-xs ${st.cls}`}>{st.label}</span></td><td className="p-3"><input value={e?.notes || ""} onChange={(ev) => updateLocal(ind.code, "notes", ev.target.value)} className="w-48 rounded-lg border p-2" placeholder="اختياري" /></td></tr>;
+          return (
+            <tr key={ind.code} className="border-t align-top hover:bg-slate-50">
+              <td className="p-3 text-center font-bold text-slate-900">{ind.code}</td>
+              <td className="p-3 text-right">
+                <div className="font-bold text-slate-900 whitespace-normal break-words">{ind.name}</div>
+                {ind.status && <div className="mt-1 text-[11px] text-slate-400">{ind.status}</div>}
+              </td>
+              <td className="p-3 text-right leading-7">
+                <div className="whitespace-pre-wrap break-words text-sm text-slate-700">{ind.description}</div>
+                {ind.denominatorDescription && (
+                  <div className="mt-2 rounded-xl border border-slate-200 bg-slate-50 p-2 text-xs leading-6 text-slate-600 whitespace-pre-wrap break-words">
+                    <span className="font-bold text-slate-800">المقام: </span>{ind.denominatorDescription}
+                  </div>
+                )}
+              </td>
+              <td className="p-3 text-center font-semibold">{ind.defaultTarget || 80}%</td>
+              <td className="p-3"><input type="number" value={e?.numerator ?? ""} onChange={(ev) => updateLocal(ind.code, "numerator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td>
+              <td className="p-3"><input type="number" value={e?.denominator ?? ""} onChange={(ev) => updateLocal(ind.code, "denominator", ev.target.value)} className="w-28 rounded-lg border p-2 text-center" /></td>
+              <td className="p-3 text-center font-bold">{v === null ? "—" : v.toFixed(1) + "%"}</td>
+              <td className="p-3 text-center"><span className={`rounded-full px-3 py-1 text-xs ${st.cls}`}>{st.label}</span></td>
+              <td className="p-3"><input value={e?.notes || ""} onChange={(ev) => updateLocal(ind.code, "notes", ev.target.value)} className="w-48 rounded-lg border p-2" placeholder="اختياري" /></td>
+            </tr>
+          );
         })}</tbody>
       </table>
     </div>
