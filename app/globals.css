@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{color-scheme:light} body{margin:0;background:#f6f8fb;color:#0f172a} *{box-sizing:border-box} input,select,textarea,button{font:inherit}

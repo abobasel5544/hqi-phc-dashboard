@@ -1,0 +1,146 @@
+[
+  {
+    "code": "4.3.3.",
+    "name": "Diabetes Screening",
+    "description": "Number of PHCC visitors (40 years and above, BMI ≥ 25) screened for abnormal blood glucose at least once in the last 3 years",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.2.",
+    "name": "Obesity Screening",
+    "description": "Number of PHCC visitors (2 years -and above) with a documented BMI during the physician encounter or during the previous twelve months",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.1.",
+    "name": "Hypertension Screening",
+    "description": "Number of PHCC visitors 18 years and above with documented screening of hypertension",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.6.",
+    "name": "Breast Cancer Screening",
+    "description": "Number of women aged 40−69 years with one or more mammograms during the measurement period or the 15 months prior to the measurement period",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.5.",
+    "name": "Colorectal Cancer Screening",
+    "description": "Number of PHCCs visitors aged 45 years and above screened for colorectal cancer by fecal immunochemical test (FIT) during the measurement period or the two years prior to the measurement period",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.8.",
+    "name": "Premarital Screening",
+    "description": "Number of individuals who completed the required premarital screening test",
+    "denominatorDescription": "Total count of eligible population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.7.",
+    "name": "Mental Health Screening",
+    "description": "Patients aged 18 years and older with documented screening for depression or anxiety on the date of the encounter or up to 12 months prior to the date of the encounter using an age-appropriate standardized tool",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.9.",
+    "name": "Newborn Screening",
+    "description": "Number of newborns screened for genetic disorders",
+    "denominatorDescription": "Total count of live births",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.3.4",
+    "name": "Dyslipidemia Screening",
+    "description": "Number of PHCC visitors (40 years and above) who had a complete lipid profile performed for screening of dyslipidemia within 5 years prior to the end of reporting",
+    "denominatorDescription": "Total count of eligible targeted population",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "4.1.1.",
+    "name": "Enrollment Rate for Top Five Diagnoses into Established Clinical Pathways",
+    "description": "Number of patients enrolled within the pathway in accordance to enrollment calculation",
+    "denominatorDescription": "Total number of patients discharged under the top five diagnosis",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "2.3.1.",
+    "name": "Patients Seen in Virtual Clinic",
+    "description": "Total number of patients who were seen in the Virtual clinics",
+    "denominatorDescription": "Total OPD patients",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "2.1.3.",
+    "name": "Days to Third Next Available Appointment",
+    "description": "The average number of calendar days (including weekends) until the third next available appointment in outpatient clinics (all specialties including primary care if available)",
+    "denominatorDescription": "The total number of sampled admitted patients within the assessment period",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "3.2.2.",
+    "name": "Hand Hygiene Compliance",
+    "description": "The total number of compliant hand hygiene opportunities",
+    "denominatorDescription": "The total number of HH opportunities observe",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "1.1.1.",
+    "name": "Patient Experience Score - HQI",
+    "description": "Number of patients who respond, “strongly agree” to the statement, “They give me exactly the help I want [and need] exactly when I want [and need] it.",
+    "denominatorDescription": "Number of patients surveyed",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "1.2.2.",
+    "name": "Overall Satisfaction with Complaint Resolution within 72 hours",
+    "description": "Complaints who received a (satisfied, very satisfied) scoring on its  resolution/outcome by the patient, family, or others",
+    "denominatorDescription": "Total number of responses to the complaints’ resolution survey",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "1.2.1",
+    "name": "Percentage of Complaints Resolved Within 72 hours",
+    "description": "Number of complaints resolved within 72 hours from filing/submission to communication of resolution",
+    "denominatorDescription": "Total number of complaints received",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "3.4.3.",
+    "name": "Nurse Vacancy Ratio",
+    "description": "Number of vacant permanent nurse FTEs",
+    "denominatorDescription": "Number of planned budgeted nurse workforce FTEs",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  },
+  {
+    "code": "5.1.1",
+    "name": "Staff Satisfaction Score",
+    "description": "Number of staff responding either 9 or 10 on the “How likely is it that you would recommend your place of work to a friend or acquaintance as a great place to work”",
+    "denominatorDescription": "Total number of staff surveyed",
+    "facilityType": "PHC",
+    "defaultTarget": 80
+  }
+]
